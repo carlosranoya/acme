@@ -1,0 +1,163 @@
+{
+    "adc56d77-348c-4bf0-908f-22d402ee715c" : {
+        "id": "adc56d77-348c-4bf0-908f-22d402ee715c",
+        "product_id": "1b2da7cc-b367-4196-8a78-9cfeec21f587",
+        "name": "Seguro de Vida Familiar",
+        "created_at": "2021-07-01T00:00:00Z",
+        "active": true,
+        "coverages": {
+            "Incêndio": 500000.00,
+            "Desastres naturais": 600000.00,
+            "Responsabiliadade civil": 80000.00,
+            "Roubo": 100000.00
+        },
+        "assistances": [
+            "Eletricista",
+            "Chaveiro 24h",
+            "Assistência Funerária"
+        ],
+        "monthly_premium_amount": {
+            "max_amount": 100.74,
+            "min_amount": 50.00,
+            "suggested_amount": 60.25
+        }
+    },
+    "bdc56d77-348c-4bf0-908f-22d402ee715c" : {
+        "id": "bdc56d77-348c-4bf0-908f-22d402ee715c",
+        "product_id": "1b2da7cc-b367-4196-8a78-9cfeec21f587",
+        "name": "Seguro de Vida Familiar 2",
+        "created_at": "2021-09-01T00:00:00Z",
+        "active": true,
+        "coverages": {
+            "Incêndio": 600000.00,
+            "Desastres naturais": 700000.00,
+            "Responsabiliadade civil": 90000.00,
+            "Roubo": 110000.00
+        },
+        "assistances": [
+            "Eletricista",
+            "Chaveiro 24h",
+            "Assistência Funerária"
+        ],
+        "monthly_premium_amount": {
+            "max_amount": 110.74,
+            "min_amount": 60.00,
+            "suggested_amount": 70.25
+        }
+    },
+    "cdc56d77-348c-4bf0-908f-22d402ee715c" : {
+        "id": "cdc56d77-348c-4bf0-908f-22d402ee715c",
+        "product_id": "1b2da7cc-b367-4196-8a78-9cfeec21f587",
+        "name": "Seguro de Vida Familiar 3",
+        "created_at": "2021-09-01T00:00:00Z",
+        "active": false,
+        "coverages": {
+            "Incêndio": 600000.00,
+            "Desastres naturais": 700000.00,
+            "Responsabiliadade civil": 90000.00,
+            "Roubo": 110000.00
+        },
+        "assistances": [
+            "Eletricista",
+            "Chaveiro 24h",
+            "Assistência Funerária"
+        ],
+        "monthly_premium_amount": {
+            "max_amount": 110.74,
+            "min_amount": 60.00,
+            "suggested_amount": 70.25
+        }
+    },
+    "a49acc20-3e2f-4784-bdb4-502de3139678" : {
+        "id": "a49acc20-3e2f-4784-bdb4-502de3139678",
+        "product_id": "1b2da7cc-b367-4196-8a78-9cfeec21f587",
+        "name": "Seguro de Vida Familiar Plus",
+        "created_at": "2021-08-01T00:00:00Z",
+        "active": true,
+        "coverages": {
+            "Incêndio": 900000.00,
+            "Desastres naturais": 1000000.00,
+            "Responsabiliadade civil": 150000.00,
+            "Roubo": 200000.00
+        },
+        "assistances": [
+            "Encanador",
+            "Eletricista",
+            "Chaveiro 24h",
+            "Assistência Funerária"
+        ],
+        "monthly_premium_amount": {
+            "max_amount": 140.74,
+            "min_amount": 75.00,
+            "suggested_amount": 86.25
+        }
+    },
+    "249acc20-3e2f-4784-bdb4-502de3139678" : {
+        "id": "249acc20-3e2f-4784-bdb4-502de3139678",
+        "product_id": "2b2da7cc-b367-4196-8a78-9cfeec21f587",
+        "name": "Seguro Auto 1",
+        "created_at": "2020-08-01T00:00:00Z",
+        "active": true,
+        "coverages": {
+            "Incêndio": 9000.00,
+            "Desastres naturais": 100000.00,
+            "Responsabiliadade civil": 15000.00,
+            "Roubo": 20000.00
+        },
+        "assistances": [
+            "Guincho 24h",
+            "Chaveiro 24h"
+        ],
+        "monthly_premium_amount": {
+            "max_amount": 100.74,
+            "min_amount": 70.00,
+            "suggested_amount": 80.00
+        }
+    },
+    "349acc20-3e2f-4784-bdb4-502de3139678" : {
+        "id": "349acc20-3e2f-4784-bdb4-502de3139678",
+        "product_id": "2b2da7cc-b367-4196-8a78-9cfeec21f587",
+        "name": "Seguro Auto 2",
+        "created_at": "2020-08-01T00:00:00Z",
+        "active": false,
+        "coverages": {
+            "Incêndio": 9000.00,
+            "Desastres naturais": 100000.00,
+            "Responsabiliadade civil": 15000.00,
+            "Roubo": 20000.00
+        },
+        "assistances": [
+            "Encanador",
+            "Eletricista",
+            "Chaveiro 24h"
+        ],
+        "monthly_premium_amount": {
+            "max_amount": 100.74,
+            "min_amount": 70.00,
+            "suggested_amount": 80.00
+        }
+    },
+    "ddc56d77-348c-4bf0-908f-22d402ee715c": {
+        "id": "ddc56d77-348c-4bf0-908f-22d402ee715c",
+        "product_id": "3b2da7cc-b367-4196-8a78-9cfeec21f587",
+        "name": "Seguro de Imóvel 1",
+        "created_at": "2020-08-01T00:00:00Z",
+        "active": false,
+        "coverages": {
+            "Incêndio": 90000.00,
+            "Desastres naturais": 1000000.00,
+            "Responsabiliadade civil": 150000.00,
+            "Roubo": 200000.00
+        },
+        "assistances": [
+            "Encanador",
+            "Eletricista",
+            "Chaveiro 24h"
+        ],
+        "monthly_premium_amount": {
+            "max_amount": 100.74,
+            "min_amount": 70.00,
+            "suggested_amount": 80.00
+        }
+    }
+}

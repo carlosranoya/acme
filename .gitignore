@@ -1,0 +1,3 @@
+install_local_maven_repo.py
+rabbitmq-bridge-mvn-repository
+data/db
