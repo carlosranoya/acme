@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.acme_insurance.quote.domain.value_object.Customer;
-import com.acme_insurance.quote.ports.ErrorInterface;
+import com.acme_insurance.quote.ports.common.ErrorInterface;
 
 public interface CreateQuoteResponseInterface extends ErrorInterface {
 

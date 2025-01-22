@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.acme_insurance.quote.application.dto.QuoteData;
 import com.acme_insurance.quote.application.repository.QuoteRepository;
-import com.acme_insurance.quote.ports.Response;
+import com.acme_insurance.quote.ports.dto.Response;
 import com.acme_insurance.quote.ports.out.QuoteSaverInterface;
 import com.acme_insurance.quote.ports.out.SaveQuoteRequestInterface;
 import com.acme_insurance.quote.ports.out.SaveQuoteResponseInterface;

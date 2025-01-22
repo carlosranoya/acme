@@ -12,6 +12,9 @@ abstract class HandlerBase implements HttpHandler {
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
         HandledData data = null;
+
+        System.out.println(String.format("========> (quote) %s %s ", 
+            httpExchange.getRequestMethod(), httpExchange.getRequestURI().getPath()));
         if ("GET".equals(httpExchange.getRequestMethod())) {
             data = handleGetRequest(httpExchange);
         } else if("POST".equals(httpExchange.getRequestMethod())) {

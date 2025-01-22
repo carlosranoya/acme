@@ -43,7 +43,7 @@ public class HTTPServer {
     private void config() throws IOException {
         if (server == null) {
             
-            server = HttpServer.create(new InetSocketAddress("localhost", port), 0);
+            server = HttpServer.create(new InetSocketAddress("0.0.0.0", port), 0);
             
             HttpContext context = server.createContext("/quote", quoteHandler);
             context.setAuthenticator(authenticator);

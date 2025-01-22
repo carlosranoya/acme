@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import com.acme_insurance.quote.domain.value_object.Offer;
-import com.acme_insurance.quote.ports.Response;
+import com.acme_insurance.quote.ports.dto.Response;
 import com.acme_insurance.quote.ports.out.OfferGetterInterface;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

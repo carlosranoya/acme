@@ -135,7 +135,7 @@ public class RequestAuthenticatorImplTest {
             HttpServer server = getLocalServer();
             server.start();
 
-            RequestAuthenticatorImpl authenticator = new RequestAuthenticatorImpl("http://localhost:3001/api/auth/wrong");
+            RequestAuthenticatorImpl authenticator = new RequestAuthenticatorImpl("http://localhost:3005/api/auth/wrong");
 
             Headers headers = new Headers();
             headers.add("access_token", validTokens.get(0));
@@ -149,6 +149,32 @@ public class RequestAuthenticatorImplTest {
             Authenticator.Failure failure = (Authenticator.Failure) result;
 
             assertEquals(failure.getResponseCode(), 404);
+        });
+
+    }
+
+    @Test
+    public void whenAuthenticatorWithWrongHostPort_shouldReturn500() {
+        
+        assertDoesNotThrow(() -> {
+
+            HttpServer server = getLocalServer();
+            server.start();
+
+            RequestAuthenticatorImpl authenticator = new RequestAuthenticatorImpl("http://localhost:3010/api/auth/wrong");
+
+            Headers headers = new Headers();
+            headers.add("access_token", validTokens.get(0));
+            HttpExchange exchange = new CustomHttpExchange(headers);
+
+            Authenticator.Result result = authenticator.authenticate(exchange);
+            server.stop(0);
+
+            assertInstanceOf(Authenticator.Failure.class, result);
+
+            Authenticator.Failure failure = (Authenticator.Failure) result;
+
+            assertEquals(failure.getResponseCode(), 500);
         });
 
     }

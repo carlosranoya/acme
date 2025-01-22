@@ -12,8 +12,8 @@ import com.acme_insurance.quote.domain.value_object.Customer;
 import com.acme_insurance.quote.domain.value_object.InvalidationReason;
 import com.acme_insurance.quote.domain.value_object.Offer;
 import com.acme_insurance.quote.domain.value_object.Product;
-import com.acme_insurance.quote.ports.Response;
-import com.acme_insurance.quote.ports.SystemError;
+import com.acme_insurance.quote.ports.common.error.SystemError;
+import com.acme_insurance.quote.ports.dto.Response;
 import com.acme_insurance.quote.ports.out.OfferGetterInterface;
 import com.acme_insurance.quote.ports.out.ProductGetterInterface;
 

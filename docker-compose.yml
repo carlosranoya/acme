@@ -1,16 +1,43 @@
 services:
 
+  quote:
+    build:
+      context: ./quote
+    ports:
+      - 8000:8000
+    depends_on:
+      - rabbitmq
+      - mongo
+    environment:
+      DB_HOST: mongo
+      DB_PORT: 27017
+      DB_DATABASE: acme
+      DB_USER: user
+      DB_PASS: secret
+      SERVER_PORT: 8000
+      AUTH_ENDPOINT: http://auth:3001/api/auth/validate
+      PRODUCT_ENDPOINT: http://catalog:3005/api/product/
+      OFFER_ENDPOINT: http://catalog:3005/api/offer/
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+    networks:
+      - acme-network
+
   catalog:
     build:
       context: ./catalog-mock-server
     ports:
-      - 3000:3000
+      - 3005:3005
+    networks:
+      - acme-network
 
   auth:
     build:
       context: ./auth-mock-server
     ports:
       - 3001:3001
+    networks:
+      - acme-network
 
   policy:
     build: 
@@ -18,14 +45,16 @@ services:
     depends_on:
       - rabbitmq
     restart: always
+    networks:
+      - acme-network
 
   rabbitmq:
 
     # hostname is important; otherwise after each container restart data will be lost
-    hostname: 'insurance-rabbitmq'
+    hostname: 'rabbitmq'
     build:
       context: ./rabbitmq
-    container_name: 'rabbitmq'
+    container_name: 'rabbitmq-acme'
     restart: always
     environment:
       - RABBITMQ_DEFAULT_USER=user
@@ -35,12 +64,9 @@ services:
       # AMQP protocol port
       - 5672:5672
       # HTTP management UI
-      - 8080:15672
-    # volumes:
-    #   - ./rabbitmq/data/:/var/lib/rabbitmq/
-    #   - ./rabbitmq/log/:/var/log/rabbitmq/
-    #   - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins:rw
-    #   - ./rabbitmq/plugins:/usr/lib/rabbitmq/plugins
+      - 8085:15672
+    networks:
+      - acme-network
 
   mongo-express:
     image: mongo-express
@@ -57,7 +83,7 @@ services:
     depends_on:
       - mongo
     networks:
-      - mongo-network
+      - acme-network
 
   mongo:
     image: mongo
@@ -70,8 +96,56 @@ services:
     volumes:
       - ./data/db:/data/db
     networks:
-      - mongo-network
+      - acme-network
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - 6379:6379
+    networks:
+      - acme-network
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    user: root
+    ports:
+      - 8080:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - redis
+    networks:
+      - acme-network
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    depends_on: 
+      - cadvisor
+    ports:
+      - 9090:9090
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - acme-network
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    container_name: grafana
+    depends_on:
+      - prometheus
+    networks:
+      - acme-network
 
 networks: 
-    mongo-network:
+    acme-network:
       driver: bridge

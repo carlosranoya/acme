@@ -17,7 +17,7 @@ import com.acme_insurance.quote.domain.entity.Quote;
 import com.acme_insurance.quote.domain.value_object.Assistance;
 import com.acme_insurance.quote.domain.value_object.InvalidationReason;
 import com.acme_insurance.quote.infra.broker.RabbitMQHandler;
-import com.acme_insurance.quote.ports.SystemError;
+import com.acme_insurance.quote.ports.common.error.SystemError;
 import com.acme_insurance.quote.ports.in.CreateQuoteRequestInterface;
 import com.acme_insurance.quote.ports.in.CreateQuoteResponseInterface;
 import com.acme_insurance.quote.ports.in.QuoteCreator;

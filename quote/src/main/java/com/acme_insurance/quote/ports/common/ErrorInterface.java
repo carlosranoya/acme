@@ -1,4 +1,4 @@
-package com.acme_insurance.quote.ports;
+package com.acme_insurance.quote.ports.common;
 
 import java.util.List;
 import java.util.Map;

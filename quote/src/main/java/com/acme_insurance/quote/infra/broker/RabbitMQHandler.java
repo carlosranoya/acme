@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.acme_insurance.quote.application.repository.CustomQuoteRepository;
@@ -23,6 +24,12 @@ public class RabbitMQHandler {
     @Autowired
     private CustomQuoteRepository quoteRepository;
 
+    // @Value("${environment.rabbitmq_port}")
+    // private int port;
+
+    // @Value("${environment.rabbitmq_host}")
+    // private String host;
+
     private String EXCHANGE_NAME = "quote.quote-received.exchange";
 
     private String QUEUE_NAME = "quote.policy-created.queue";
@@ -32,11 +39,16 @@ public class RabbitMQHandler {
     
         private boolean isConsuming = false;
     
-        public RabbitMQHandler() {
+        public RabbitMQHandler(
+            @Value("${environment.rabbitmq_port}")
+            int port,
+            @Value("${environment.rabbitmq_host}")
+            String host
+        ) {
     
             factory = new ConnectionFactory();
-            factory.setHost("localhost");
-            factory.setPort(5672);
+            factory.setHost(host);
+            factory.setPort(port);
             factory.setUsername("guest");
             factory.setPassword("guest");
     

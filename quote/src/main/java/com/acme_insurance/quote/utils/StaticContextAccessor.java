@@ -1,4 +1,4 @@
-package com.acme_insurance.quote;
+package com.acme_insurance.quote.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

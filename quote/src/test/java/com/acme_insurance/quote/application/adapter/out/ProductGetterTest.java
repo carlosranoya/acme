@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.acme_insurance.quote.TestData;
 import com.acme_insurance.quote.domain.value_object.Offer;
 import com.acme_insurance.quote.domain.value_object.Product;
-import com.acme_insurance.quote.ports.Response;
+import com.acme_insurance.quote.ports.dto.Response;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

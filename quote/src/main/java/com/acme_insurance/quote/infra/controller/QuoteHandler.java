@@ -12,7 +12,7 @@ import com.acme_insurance.quote.application.adapter.in.dto.CreateQuoteRequestImp
 import com.acme_insurance.quote.application.adapter.in.dto.RetrieveQuoteRequestImpl;
 import com.acme_insurance.quote.application.use_case.CreateQuote;
 import com.acme_insurance.quote.application.use_case.RetrieveQuote;
-import com.acme_insurance.quote.ports.ErrorInterface;
+import com.acme_insurance.quote.ports.common.ErrorInterface;
 import com.acme_insurance.quote.ports.in.CreateQuoteResponseInterface;
 import com.acme_insurance.quote.ports.in.RetrieveQuoteResponseInterface;
 import com.fasterxml.jackson.core.JsonProcessingException;

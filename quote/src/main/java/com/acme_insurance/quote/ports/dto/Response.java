@@ -1,9 +1,11 @@
-package com.acme_insurance.quote.ports;
+package com.acme_insurance.quote.ports.dto;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.acme_insurance.quote.ports.common.ErrorInterface;
 
 public class Response<T> implements ErrorInterface {
 

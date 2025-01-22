@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.acme_insurance.quote.application.adapter.out.dto.GetQuoteErrorResponseImpl;
 import com.acme_insurance.quote.application.repository.QuoteRepository;
-import com.acme_insurance.quote.ports.Response;
+import com.acme_insurance.quote.ports.dto.Response;
 import com.acme_insurance.quote.ports.out.GetQuoteRequestInterface;
 import com.acme_insurance.quote.ports.out.GetQuoteResponseInterface;
 import com.acme_insurance.quote.ports.out.QuoteGetterInterface;
