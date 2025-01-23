@@ -1,0 +1,80 @@
+services:
+
+  catalog:
+    build:
+      context: ./catalog-mock-server
+    ports:
+      - 3005:3005
+    networks:
+      - acme-network
+
+  auth:
+    build:
+      context: ./auth-mock-server
+    ports:
+      - 3001:3001
+    networks:
+      - acme-network
+
+  policy:
+    build: 
+      context: ./policy-mock-server
+    depends_on:
+      - rabbitmq
+    restart: always
+    networks:
+      - acme-network
+
+  rabbitmq:
+
+    # hostname is important; otherwise after each container restart data will be lost
+    hostname: 'rabbitmq'
+    build:
+      context: ./rabbitmq
+    container_name: 'rabbitmq-acme'
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=secret
+      - RABBITMQ_PLUGINS_DIR=/opt/rabbitmq/plugins:/usr/lib/rabbitmq/plugins
+    ports:
+      # AMQP protocol port
+      - 5672:5672
+      # HTTP management UI
+      - 8085:15672
+    networks:
+      - acme-network
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: user
+      ME_CONFIG_BASICAUTH_PASSWORD: secret
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: user
+      ME_CONFIG_MONGODB_ADMINPASSWORD: secret
+      ME_CONFIG_MONGODB_URL: mongodb://user:secret@mongo:27017/acme?authSource=admin
+    depends_on:
+      - mongo
+    networks:
+      - acme-network
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db
+    networks:
+      - acme-network
+
+networks: 
+    acme-network:
+      driver: bridge

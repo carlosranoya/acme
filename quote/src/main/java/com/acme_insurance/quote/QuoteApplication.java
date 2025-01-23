@@ -25,13 +25,6 @@ public class QuoteApplication {
 		SpringApplication.run(QuoteApplication.class, args);
 
         HTTPServer httpServer = StaticContextAccessor.getBean(HTTPServer.class);
-
-        try {
-            Thread.sleep(15000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
         
 		try {
             httpServer.startServer();
@@ -69,7 +62,6 @@ public class QuoteApplication {
 	CommandLineRunner runner (QuoteRepository repository) {
         
 		return args -> {
-            Thread.sleep(10000);
 
             PropertiesInitializationTest prop  = StaticContextAccessor.getBean(PropertiesInitializationTest.class);
 

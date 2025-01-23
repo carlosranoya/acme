@@ -1,0 +1,595 @@
+{
+	"info": {
+		"_postman_id": "04ef269e-373b-4861-8041-1c619570bd34",
+		"name": "ACME",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11964445"
+	},
+	"item": [
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/api/product/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3005/api/product/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3005",
+									"path": [
+										"api",
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.1.3 Python/3.11.11"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jan 2025 22:17:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "794"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"1b2da7cc-b367-4196-8a78-9cfeec21f587\": {\n        \"active\": true,\n        \"created_at\": \"2021-07-01T00:00:00Z\",\n        \"id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\n        \"name\": \"Seguro de Vida\",\n        \"offers\": [\n            \"adc56d77-348c-4bf0-908f-22d402ee715c\",\n            \"bdc56d77-348c-4bf0-908f-22d402ee715c\",\n            \"cdc56d77-348c-4bf0-908f-22d402ee715c\",\n            \"a49acc20-3e2f-4784-bdb4-502de3139678\"\n        ]\n    },\n    \"2b2da7cc-b367-4196-8a78-9cfeec21f587\": {\n        \"active\": false,\n        \"created_at\": \"2021-04-01T00:00:00Z\",\n        \"id\": \"2b2da7cc-b367-4196-8a78-9cfeec21f587\",\n        \"name\": \"Seguro de Auto\",\n        \"offers\": [\n            \"249acc20-3e2f-4784-bdb4-502de3139678\",\n            \"349acc20-3e2f-4784-bdb4-502de3139678\"\n        ]\n    },\n    \"3b2da7cc-b367-4196-8a78-9cfeec21f587\": {\n        \"active\": false,\n        \"created_at\": \"2021-02-01T00:00:00Z\",\n        \"id\": \"3b2da7cc-b367-4196-8a78-9cfeec21f587\",\n        \"name\": \"Seguro de Imóvel\",\n        \"offers\": [\n            \"ddc56d77-348c-4bf0-908f-22d402ee715c\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3005/api/product/1b2da7cc-b367-4196-8a78-9cfeec21f587",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"product",
+								"1b2da7cc-b367-4196-8a78-9cfeec21f587"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3005/api/product/1b2da7cc-b367-4196-8a78-9cfeec21f587",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3005",
+									"path": [
+										"api",
+										"product",
+										"1b2da7cc-b367-4196-8a78-9cfeec21f587"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.1.3 Python/3.11.11"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jan 2025 22:18:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"active\": true,\n    \"created_at\": \"2021-07-01T00:00:00Z\",\n    \"id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\n    \"name\": \"Seguro de Vida\",\n    \"offers\": [\n        \"adc56d77-348c-4bf0-908f-22d402ee715c\",\n        \"bdc56d77-348c-4bf0-908f-22d402ee715c\",\n        \"cdc56d77-348c-4bf0-908f-22d402ee715c\",\n        \"a49acc20-3e2f-4784-bdb4-502de3139678\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/api/offer/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"offer",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Offers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3005/api/offer/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3005",
+									"path": [
+										"api",
+										"offer",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.1.3 Python/3.11.11"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jan 2025 22:16:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3485"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"249acc20-3e2f-4784-bdb4-502de3139678\": {\n        \"active\": true,\n        \"assistances\": [\n            \"Guincho 24h\",\n            \"Chaveiro 24h\"\n        ],\n        \"coverages\": {\n            \"Desastres naturais\": 100000,\n            \"Incêndio\": 9000,\n            \"Responsabiliadade civil\": 15000,\n            \"Roubo\": 20000\n        },\n        \"created_at\": \"2020-08-01T00:00:00Z\",\n        \"id\": \"249acc20-3e2f-4784-bdb4-502de3139678\",\n        \"monthly_premium_amount\": {\n            \"max_amount\": 100.74,\n            \"min_amount\": 70,\n            \"suggested_amount\": 80\n        },\n        \"name\": \"Seguro Auto 1\",\n        \"product_id\": \"2b2da7cc-b367-4196-8a78-9cfeec21f587\"\n    },\n    \"349acc20-3e2f-4784-bdb4-502de3139678\": {\n        \"active\": false,\n        \"assistances\": [\n            \"Encanador\",\n            \"Eletricista\",\n            \"Chaveiro 24h\"\n        ],\n        \"coverages\": {\n            \"Desastres naturais\": 100000,\n            \"Incêndio\": 9000,\n            \"Responsabiliadade civil\": 15000,\n            \"Roubo\": 20000\n        },\n        \"created_at\": \"2020-08-01T00:00:00Z\",\n        \"id\": \"349acc20-3e2f-4784-bdb4-502de3139678\",\n        \"monthly_premium_amount\": {\n            \"max_amount\": 100.74,\n            \"min_amount\": 70,\n            \"suggested_amount\": 80\n        },\n        \"name\": \"Seguro Auto 2\",\n        \"product_id\": \"2b2da7cc-b367-4196-8a78-9cfeec21f587\"\n    },\n    \"a49acc20-3e2f-4784-bdb4-502de3139678\": {\n        \"active\": true,\n        \"assistances\": [\n            \"Encanador\",\n            \"Eletricista\",\n            \"Chaveiro 24h\",\n            \"Assistência Funerária\"\n        ],\n        \"coverages\": {\n            \"Desastres naturais\": 1000000,\n            \"Incêndio\": 900000,\n            \"Responsabiliadade civil\": 150000,\n            \"Roubo\": 200000\n        },\n        \"created_at\": \"2021-08-01T00:00:00Z\",\n        \"id\": \"a49acc20-3e2f-4784-bdb4-502de3139678\",\n        \"monthly_premium_amount\": {\n            \"max_amount\": 140.74,\n            \"min_amount\": 75,\n            \"suggested_amount\": 86.25\n        },\n        \"name\": \"Seguro de Vida Familiar Plus\",\n        \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\"\n    },\n    \"adc56d77-348c-4bf0-908f-22d402ee715c\": {\n        \"active\": true,\n        \"assistances\": [\n            \"Eletricista\",\n            \"Chaveiro 24h\",\n            \"Assistência Funerária\"\n        ],\n        \"coverages\": {\n            \"Desastres naturais\": 600000,\n            \"Incêndio\": 500000,\n            \"Responsabiliadade civil\": 80000,\n            \"Roubo\": 100000\n        },\n        \"created_at\": \"2021-07-01T00:00:00Z\",\n        \"id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\n        \"monthly_premium_amount\": {\n            \"max_amount\": 100.74,\n            \"min_amount\": 50,\n            \"suggested_amount\": 60.25\n        },\n        \"name\": \"Seguro de Vida Familiar\",\n        \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\"\n    },\n    \"bdc56d77-348c-4bf0-908f-22d402ee715c\": {\n        \"active\": true,\n        \"assistances\": [\n            \"Eletricista\",\n            \"Chaveiro 24h\",\n            \"Assistência Funerária\"\n        ],\n        \"coverages\": {\n            \"Desastres naturais\": 700000,\n            \"Incêndio\": 600000,\n            \"Responsabiliadade civil\": 90000,\n            \"Roubo\": 110000\n        },\n        \"created_at\": \"2021-09-01T00:00:00Z\",\n        \"id\": \"bdc56d77-348c-4bf0-908f-22d402ee715c\",\n        \"monthly_premium_amount\": {\n            \"max_amount\": 110.74,\n            \"min_amount\": 60,\n            \"suggested_amount\": 70.25\n        },\n        \"name\": \"Seguro de Vida Familiar 2\",\n        \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\"\n    },\n    \"cdc56d77-348c-4bf0-908f-22d402ee715c\": {\n        \"active\": false,\n        \"assistances\": [\n            \"Eletricista\",\n            \"Chaveiro 24h\",\n            \"Assistência Funerária\"\n        ],\n        \"coverages\": {\n            \"Desastres naturais\": 700000,\n            \"Incêndio\": 600000,\n            \"Responsabiliadade civil\": 90000,\n            \"Roubo\": 110000\n        },\n        \"created_at\": \"2021-09-01T00:00:00Z\",\n        \"id\": \"cdc56d77-348c-4bf0-908f-22d402ee715c\",\n        \"monthly_premium_amount\": {\n            \"max_amount\": 110.74,\n            \"min_amount\": 60,\n            \"suggested_amount\": 70.25\n        },\n        \"name\": \"Seguro de Vida Familiar 3\",\n        \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\"\n    },\n    \"ddc56d77-348c-4bf0-908f-22d402ee715c\": {\n        \"active\": false,\n        \"assistances\": [\n            \"Encanador\",\n            \"Eletricista\",\n            \"Chaveiro 24h\"\n        ],\n        \"coverages\": {\n            \"Desastres naturais\": 1000000,\n            \"Incêndio\": 90000,\n            \"Responsabiliadade civil\": 150000,\n            \"Roubo\": 200000\n        },\n        \"created_at\": \"2020-08-01T00:00:00Z\",\n        \"id\": \"ddc56d77-348c-4bf0-908f-22d402ee715c\",\n        \"monthly_premium_amount\": {\n            \"max_amount\": 100.74,\n            \"min_amount\": 70,\n            \"suggested_amount\": 80\n        },\n        \"name\": \"Seguro de Imóvel 1\",\n        \"product_id\": \"3b2da7cc-b367-4196-8a78-9cfeec21f587\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Offer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3005/api/offer/adc56d77-348c-4bf0-908f-22d402ee715c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"offer",
+								"adc56d77-348c-4bf0-908f-22d402ee715c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Offer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3005/api/offer/adc56d77-348c-4bf0-908f-22d402ee715c",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3005",
+									"path": [
+										"api",
+										"offer",
+										"adc56d77-348c-4bf0-908f-22d402ee715c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.1.3 Python/3.11.11"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jan 2025 22:15:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "470"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"active\": true,\n    \"assistances\": [\n        \"Eletricista\",\n        \"Chaveiro 24h\",\n        \"Assistência Funerária\"\n    ],\n    \"coverages\": {\n        \"Desastres naturais\": 600000,\n        \"Incêndio\": 500000,\n        \"Responsabiliadade civil\": 80000,\n        \"Roubo\": 100000\n    },\n    \"created_at\": \"2021-07-01T00:00:00Z\",\n    \"id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\n    \"monthly_premium_amount\": {\n        \"max_amount\": 100.74,\n        \"min_amount\": 50,\n        \"suggested_amount\": 60.25\n    },\n    \"name\": \"Seguro de Vida Familiar\",\n    \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Quote",
+			"item": [
+				{
+					"name": "post quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBY21lIEF1dGgiLCJpYXQiOjE3MzczMTM4NjksImV4cCI6MTc2ODg0OTg2OSwiYXVkIjoid3d3LmFjbWUuY29tIiwic3ViIjoibWFndWlsYUBhY21lLmNvbSIsIkdpdmVuTmFtZSI6Ik1hZ3VpbGEiLCJTdXJuYW1lIjoiUm9kcmlndWVzIiwiRW1haWwiOiJtYWd1aWxhQGFjbWUuY29tIiwiUm9sZSI6IkNsaWVudCJ9.HcOhnY_4YYpJvSOGBAq-xPcASn4NY-QZrXAKsHB5D5s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\n    \"offer_id\": \"a49acc20-3e2f-4784-bdb4-502de3139678\",\n    \"category\": \"HOME\",\n    \"total_monthly_premium_amount\": 75.25,\n    \"total_coverage_amount\": 825000.00,\n    \"coverages\": {\n        \"Incêndio\": 250000.00,\n        \"Desastres naturais\": 500000.00,\n        \"Responsabiliadade civil\": 75000.00\n    },\n    \"assistances\": [\n        \"Encanador\",\n        \"Eletricista\",\n        \"Chaveiro 24h\"\n    ],\n    \"customer\": {\n        \"document_number\": \"36205578900\",\n        \"name\": \"John Wick\",\n        \"type\": \"NATURAL\",\n        \"gender\": \"MALE\",\n        \"date_of_birth\": \"1973-05-02\",\n        \"email\": \"johnwick@gmail.com\",\n        \"phone_number\": 11950503030\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/quote/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"quote",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "post quote",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBY21lIEF1dGgiLCJpYXQiOjE3MzczMTM4NjksImV4cCI6MTc2ODg0OTg2OSwiYXVkIjoid3d3LmFjbWUuY29tIiwic3ViIjoibWFndWlsYUBhY21lLmNvbSIsIkdpdmVuTmFtZSI6Ik1hZ3VpbGEiLCJTdXJuYW1lIjoiUm9kcmlndWVzIiwiRW1haWwiOiJtYWd1aWxhQGFjbWUuY29tIiwiUm9sZSI6IkNsaWVudCJ9.HcOhnY_4YYpJvSOGBAq-xPcASn4NY-QZrXAKsHB5D5s",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\n    \"offer_id\": \"a49acc20-3e2f-4784-bdb4-502de3139678\",\n    \"category\": \"HOME\",\n    \"total_monthly_premium_amount\": 75.25,\n    \"total_coverage_amount\": 825000.00,\n    \"coverages\": {\n        \"Incêndio\": 250000.00,\n        \"Desastres naturais\": 500000.00,\n        \"Responsabiliadade civil\": 75000.00\n    },\n    \"assistances\": [\n        \"Encanador\",\n        \"Eletricista\",\n        \"Chaveiro 24h\"\n    ],\n    \"customer\": {\n        \"document_number\": \"36205578900\",\n        \"name\": \"John Wick\",\n        \"type\": \"NATURAL\",\n        \"gender\": \"MALE\",\n        \"date_of_birth\": \"1973-05-02\",\n        \"email\": \"johnwick@gmail.com\",\n        \"phone_number\": 11950503030\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/quote/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"quote",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jan 2025 13:59:54 GMT"
+								},
+								{
+									"key": "Content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-length",
+									"value": "689"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9604994438,\n    \"productId\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\n    \"offerId\": \"a49acc20-3e2f-4784-bdb4-502de3139678\",\n    \"category\": \"HOME\",\n    \"totalMonthlyPremiumAmount\": 75.25,\n    \"totalCoverageAmount\": 825000,\n    \"coverages\": {\n        \"Incêndio\": 250000,\n        \"Desastres naturais\": 500000,\n        \"Responsabiliadade civil\": 75000\n    },\n    \"assistances\": [\n        \"Encanador\",\n        \"Eletricista\",\n        \"Chaveiro 24h\"\n    ],\n    \"customer\": {\n        \"document_number\": \"36205578900\",\n        \"date_of_birth\": 105148800000,\n        \"phone_number\": \"11950503030\",\n        \"name\": \"John Wick\",\n        \"type\": \"NATURAL\",\n        \"gender\": \"MALE\",\n        \"email\": \"johnwick@gmail.com\"\n    },\n    \"errors\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "get quote by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBY21lIEF1dGgiLCJpYXQiOjE3MzczMTM4NjksImV4cCI6MTc2ODg0OTg2OSwiYXVkIjoid3d3LmFjbWUuY29tIiwic3ViIjoibWFndWlsYUBhY21lLmNvbSIsIkdpdmVuTmFtZSI6Ik1hZ3VpbGEiLCJTdXJuYW1lIjoiUm9kcmlndWVzIiwiRW1haWwiOiJtYWd1aWxhQGFjbWUuY29tIiwiUm9sZSI6IkNsaWVudCJ9.HcOhnY_4YYpJvSOGBAq-xPcASn4NY-QZrXAKsHB5D5s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 9604994438\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/quote/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"quote",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get quote",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBY21lIEF1dGgiLCJpYXQiOjE3MzczMTM4NjksImV4cCI6MTc2ODg0OTg2OSwiYXVkIjoid3d3LmFjbWUuY29tIiwic3ViIjoibWFndWlsYUBhY21lLmNvbSIsIkdpdmVuTmFtZSI6Ik1hZ3VpbGEiLCJTdXJuYW1lIjoiUm9kcmlndWVzIiwiRW1haWwiOiJtYWd1aWxhQGFjbWUuY29tIiwiUm9sZSI6IkNsaWVudCJ9.HcOhnY_4YYpJvSOGBAq-xPcASn4NY-QZrXAKsHB5D5s",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 9604994438\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/quote/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"quote",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jan 2025 15:29:51 GMT"
+								},
+								{
+									"key": "Content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-length",
+									"value": "799"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9604994438,\n    \"insurance_policy_id\": null,\n    \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\n    \"offer_id\": \"a49acc20-3e2f-4784-bdb4-502de3139678\",\n    \"category\": \"HOME\",\n    \"created_at\": \"2025-01-22T10:59:54.438Z\",\n    \"updated_at\": \"2025-01-22T10:59:54.438Z\",\n    \"total_monthly_premium_amount\": 75.25,\n    \"total_coverage_amount\": 825000,\n    \"coverages\": {\n        \"Incêndio\": 250000,\n        \"Desastres naturais\": 500000,\n        \"Responsabiliadade civil\": 75000\n    },\n    \"assistances\": [\n        \"Encanador\",\n        \"Eletricista\",\n        \"Chaveiro 24h\"\n    ],\n    \"customer\": {\n        \"document_number\": \"36205578900\",\n        \"date_of_birth\": 105148800000,\n        \"phone_number\": \"11950503030\",\n        \"name\": \"John Wick\",\n        \"type\": \"NATURAL\",\n        \"gender\": \"MALE\",\n        \"email\": \"johnwick@gmail.com\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Validate Access Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBY21lIEF1dGgiLCJpYXQiOjE3MzczMTM4NjksImV4cCI6MTc2ODg0OTg2OSwiYXVkIjoid3d3LmFjbWUuY29tIiwic3ViIjoibWFndWlsYUBhY21lLmNvbSIsIkdpdmVuTmFtZSI6Ik1hZ3VpbGEiLCJTdXJuYW1lIjoiUm9kcmlndWVzIiwiRW1haWwiOiJtYWd1aWxhQGFjbWUuY29tIiwiUm9sZSI6IkNsaWVudCJ9.HcOhnY_4YYpJvSOGBAq-xPcASn4NY-QZrXAKsHB5D5s\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/auth/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"auth",
+								"validate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Validate Access Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBY21lIEF1dGgiLCJpYXQiOjE3MzczMTM4NjksImV4cCI6MTc2ODg0OTg2OSwiYXVkIjoid3d3LmFjbWUuY29tIiwic3ViIjoibWFndWlsYUBhY21lLmNvbSIsIkdpdmVuTmFtZSI6Ik1hZ3VpbGEiLCJTdXJuYW1lIjoiUm9kcmlndWVzIiwiRW1haWwiOiJtYWd1aWxhQGFjbWUuY29tIiwiUm9sZSI6IkNsaWVudCJ9.HcOhnY_4YYpJvSOGBAq-xPcASn4NY-QZrXAKsHB5D5s\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/auth/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"auth",
+										"validate"
+									]
+								}
+							},
+							"status": "NO CONTENT",
+							"code": 204,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Werkzeug/3.1.3 Python/3.11.11"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 22 Jan 2025 22:52:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
