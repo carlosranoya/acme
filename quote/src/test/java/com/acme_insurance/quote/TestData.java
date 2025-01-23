@@ -10,11 +10,17 @@ import java.util.Map;
 
 import com.acme_insurance.quote.domain.value_object.Assistance;
 import com.acme_insurance.quote.domain.value_object.CoverageType;
+import com.acme_insurance.quote.domain.value_object.Customer;
 import com.acme_insurance.quote.domain.value_object.MonthlyPremiumAmount;
 import com.acme_insurance.quote.domain.value_object.Offer;
 import com.acme_insurance.quote.domain.value_object.Product;
 
 public class TestData {
+
+    public static List<String> parsedSomeAssiatances = Arrays.asList(new String[] {
+        Assistance.ENCANADOR.getDescription(),
+        Assistance.ELETRICISTA.getDescription()
+    });
 
     public static List<Assistance> someAssiatances = Arrays.asList(new Assistance[] {
         Assistance.ENCANADOR,
@@ -52,6 +58,10 @@ public class TestData {
     public static Map<String, BigDecimal> emptyCoverages() {
         return new HashMap<>();
     }
+
+    public static Customer emptyCustumer = new Customer(
+        null, null, null, null, null, null, null
+    );
 
     public static MonthlyPremiumAmount monthlyPremium1 = new MonthlyPremiumAmount(
         new BigDecimal(100), new BigDecimal(50), new BigDecimal(70));
