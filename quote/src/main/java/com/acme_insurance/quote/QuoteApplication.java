@@ -13,6 +13,8 @@ import com.acme_insurance.quote.application.repository.QuoteRepository;
 import com.acme_insurance.quote.infra.server.HTTPServer;
 import com.acme_insurance.quote.utils.StaticContextAccessor;
 
+import io.prometheus.metrics.instrumentation.jvm.JvmMetrics;
+
 
 @SpringBootApplication
 public class QuoteApplication {
@@ -21,6 +23,8 @@ public class QuoteApplication {
 	private int port;
 
 	public static void main(String[] args) {
+
+        JvmMetrics.builder().register();
 
 		SpringApplication.run(QuoteApplication.class, args);
 
@@ -31,6 +35,12 @@ public class QuoteApplication {
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(2);
+        }
+
+        try {
+            // para garantir o bom funcionamento do agente do Prometheus com o servidor Http
+            Thread.currentThread().join();
+        } catch (InterruptedException e) {
         }
 	}
 

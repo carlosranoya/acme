@@ -48,18 +48,29 @@ O projeto inclui configurações para rodar dentro do Visual Studio Code. As op�
 
 
 ## Racional
+
 Primeiramente sobre as escolhas feitas.
+
 A escolha de um banco NoSql se deve ao fato de, justamente, não haver necessidade de relacionamentos entre entidades do banco. Há apenas 3 requerimentos para o BD: gravar um documento, consultar e fazer um uapdatede um campo (id da apólice).
 Os servidores rest mockados foram feitos em Python/Flask pela enorme facilidade em se implementar. Poucas linhas de código.
+
 A escolha do ambiente Docker para rodar os containers também de deve à maior facilidade de implantação, na minha opinião, pela necessidade de subir todos os 11 serviços (bancos inclusos).
+
 A escolha do RabbitMQ como message broker também é justificável pela natureza das mensagens: pequenas e com suposta baixa demanda em uma situação real.
+
 Sobre a arquitetura da aplicação principal, houve uma preocupação em adotar uma extrutura de "Clean Architecture", mantendo clara a separação entre camada de domínio, de aplicação e de recursos externos e suas conexões. Então o projeto está também aderente ao modelo hexagonal, evidenciado pelas definições de portas de saída e entrada como interfaces a serem implemetadas dentro camada de aplicação e entre a camada de aplicação e a infraestrutura.
+
 Mais um pequeno detalhe, houve a inserção de atrasos (Thread.sleep()) na comunicação com broker, para "simular" um comportamento de processamento mais lento dos dados trocados.
 
 ## Pendências
+
 Era o desejo inicial avaliar a cobertura de testes da aplicação principal pelo SonarQube, mas por limitações de tempo, esta ficou sendo uma pendência importante.
+
 As ferrmentas de obsrvabilidade estão também no momento só como recursos exemplificativos, pois a instrumentalização da aplicação também ficou comprometida pelo prazo de conclusão.
+
 Ficou pendente também a documentação em Swagger, também um desejo inicial.
+
+Para o trace das requisições, ficou no papel a implementação de um mecanismo de levar um correlation_id único, que é passado de uma aplicação para outra, possibilitando o rastreamento das requisições relacionadas, em combinação com os logs das requisições.
 
 ## ✒️ Autor
 
