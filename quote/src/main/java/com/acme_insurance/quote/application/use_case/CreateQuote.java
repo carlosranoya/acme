@@ -29,6 +29,8 @@ import com.acme_insurance.quote.ports.out.SaveQuoteResponseInterface;
 @Service
 public class CreateQuote implements QuoteCreator {
 
+    // TODO: Esta classe não pode depender diretamente de um recurso de infraestrutura
+    // criar interface para posterior inversão de controle
     @Autowired
     private RabbitMQHandler brokerService;
 
@@ -40,9 +42,6 @@ public class CreateQuote implements QuoteCreator {
 
     @Autowired
     private ProductGetterInterface productGetter;
-
-    // @Autowired
-    // private QuoteReceivedMessageSender messageSender;
 
     @Override
     public CreateQuoteResponseInterface create(CreateQuoteRequestInterface request) {
